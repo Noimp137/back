@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.OrdersDao">
+
+	
+
+	<!-- 插入到数据库 -->
+	<insert id="insertBean"		parameterType="com.entity.Orders">
+		insert into t_orders (bnumber,bcategory,bname,press,ordernumber,ctime,status,storageStatus,storagetime,bookid)
+					values (#{bnumber},#{bcategory},#{bname},#{press},#{ordernumber},#{ctime},#{status},#{storageStatus},#{storagetime},#{bookid})
+	</insert>
+	
+	<!-- 根据ID删除数据库的记录 -->
+	<delete id="deleteBean"	parameterType="int">
+		delete from t_orders  where id=#{id}
+	</delete>
+	
+	<!-- 根据ID更新数据库的记录 -->
+	<update id="updateBean"	parameterType="com.entity.Orders">
+		update	t_orders
+		<set>
+			<trim suffixOverrides=",">
+				<if test="bnumber !=null">bnumber=#{bnumber},</if>
+				<if test="bcategory !=null">bcategory=#{bcategory},</if>
+				<if test="bname !=null">bname=#{bname},</if>
+				<if test="press !=null">press=#{press},</if>
+				<if test="ordernumber !=null">ordernumber=#{ordernumber},</if>
+				<if test="ctime !=null">ctime=#{ctime},</if>
+				<if test="status !=null">status=#{status},</if>
+				<if test="storageStatus !=null">storageStatus=#{storageStatus},</if>
+				<if test="bookid !=null">bookid=#{bookid},</if>
+				<if test="storagetime !=null">storagetime=#{storagetime}</if>
+			</trim>
+		</set>
+		where 
+			id=#{id} 
+ 
+	</update>
+	
+
+	
+	
+	<select id="queryData" parameterType="string" resultType="com.entity.Orders"   >
+        ${value}
+    </select>
+	
+	
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+*{padding:0;margin:0;}
+body{font:12px "ËÎÌå",Arial,Verdana;color:#000;text-align:left;background-color:#FFF;} 
+a:link,a:visited{color:#000;text-decoration:none;}a:hover{color:#F00;text-decoration:underline;}
+ul,li{list-style:none;display:block;}
+input,button,select{font:100% arial,helvetica,clean,sans-serif;}
+em{font-style:normal;color:#F00;margin-right:6px;}
+img,a img{border:0 none;vertical-align:middle;}
+.red{color:#F00;}
+#wforder{margin:0 auto;padding:10px;border:3px solid #F60;}
+.wforderl{float:left;}
+.wforderr{float:right;width:290px;padding-left:20px;border-left:2px dotted;}
+.kda{width:260px;}
+.kdb{width:400px;}
+.wforderl,.wforderr{overflow:hidden;}
+.wftitle{height:40px;line-height:40px;overflow:hidden;font-size:15px;color:#F00;font-family:"ºÚÌå";margin-bottom:10px;border-bottom:2px dotted;}
+.bdbox li{height:30px;line-height:20px;padding:4px 0 0;*padding:0;_padding:0;border-bottom:1px solid #e4e4e4;}
+.bdbox li input.dxk{display:block;float:left;width:15px;height:15px;color:#F00;padding:1px 1px 0 0;cursor:pointer;background-color:#E6E6E6;}
+.bdbox li label{display:block;float:left;height:18px;line-height:18px;margin:0 20px 0 6px;cursor:pointer;}
+.bdbox li span.bdl{float:left;line-height:24px;text-align:right;}
+.bdbox li span.bdr{float:right;padding-left:10px;border-left:1px solid #CCC;}
+.bdbox li span.bdr #showprit{clear:both;display:inline;font-family:Arial,Verdana;font-size:14px;font-weight:bold;color:#F60;margin:0 5px;}
+.select{display:inline;float:left;padding:3px 6px;border:1px solid #CCC;}
+.select div{float:left;}
+.select>div{overflow:hidden;}
+.select div select{font-size:14px;color:#C00;background-color:#FFF;}
+* html .select div select{display:block;float:left;margin:-2px;}
+.select div>select{display:block;float:none;margin:-2px;}
+.select:hover{border:1px solid #999;}
+.bdbox li.next{height:30px;margin-top:5px;border:none;text-align:center;}
+.bdbox li span.bdr .payaa{height:25px;padding-top:3px;}
+.bdbox li span.bdr .paybb{height:45px;color:#bd0000;padding:8px 6px 0;border:1px dotted #CCC;background-color:#f9f9f9;}
+.bdbox li.code img{width:48px;height:26px;vertical-align:middle;cursor:pointer;}
+.bdbox li span.bdr input.txt{height:22px;line-height:22px;vertical-align:middle;font-size:14px;color:#060;padding:0 6px;border:none;outline:none;border:1px solid #c8c8c8;background:url("txtbg.jpg")/*tpa=http://www.liweige.com/wforder/template/style/txtbg.jpg*/ repeat-x;}
+.bdbox li span.bdr input.txt2{width:50px;height:26px;line-height:26px;vertical-align:middle;text-align:center;font-weight:bold;margin-right:5px;}
+.bdbox li span.bdr textarea.guest{font-size:12px;color:#060;padding:6px;border:none;border:1px solid #c8c8c8;}
+.bdbox li input.send{width:95px;height:30px;font-size:14px;color:#FFF;padding:0 0 2px;padding:2px 0 0 0\9;vertical-align:middle;cursor:pointer;border:0;}
+.suba{background:url(../images/suba.gif) no-repeat;margin-right:30px;}
+.subb{background:url(../images/subb.gif) no-repeat;}
+#wffahuo{width:275px;line-height:1.8em;color:#666;margin-bottom:10px;padding:0 0 0 15px;}
+
+/* WFPHPORDER public.css end */

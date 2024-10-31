@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ClassinfoDao">
+
+	
+
+	<!-- 插入到数据库 -->
+	<insert id="insertBean"		parameterType="com.entity.Classinfo">
+		insert into t_classinfo (college,major,sessioninfo,classname,stunumber)
+					values (#{college},#{major},#{sessioninfo},#{classname},#{stunumber})
+	</insert>
+	
+	<!-- 根据ID删除数据库的记录 -->
+	<delete id="deleteBean"	parameterType="int">
+		delete from t_classinfo  where id=#{id}
+	</delete>
+	
+	<!-- 根据ID更新数据库的记录 -->
+	<update id="updateBean"	parameterType="com.entity.Classinfo">
+		update	t_classinfo
+		<set>
+			<trim suffixOverrides=",">
+				<if test="college !=null">college=#{college},</if>
+				<if test="major !=null">major=#{major},</if>
+				<if test="sessioninfo !=null">sessioninfo=#{sessioninfo},</if>
+				<if test="stunumber !=null">stunumber=#{stunumber},</if>
+				<if test="classname !=null">classname=#{classname}</if>
+			</trim>
+		</set>
+		where 
+			id=#{id} 
+ 
+	</update>
+	
+
+	
+	
+	<select id="queryData" parameterType="string" resultType="com.entity.Classinfo"   >
+        ${value}
+    </select>
+	
+	
+</mapper>
+
+
+
+
+
+
+

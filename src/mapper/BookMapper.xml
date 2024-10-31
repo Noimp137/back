@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.BookDao">
+
+	
+
+	<!-- 插入到数据库 -->
+	<insert id="insertBean"		parameterType="com.entity.Book">
+		insert into t_book (bnumber,bcategory,bname,author,press,price,pic,intro,courseid,cname,kucunsl,tobeordered,ordered)
+					values (#{bnumber},#{bcategory},#{bname},#{author},#{press},#{price},#{pic},#{intro},#{courseid},#{cname},#{kucunsl},#{tobeordered},#{ordered})
+	</insert>
+	
+	<!-- 根据ID删除数据库的记录 -->
+	<delete id="deleteBean"	parameterType="int">
+		delete from t_book  where id=#{id}
+	</delete>
+	
+	<!-- 根据ID更新数据库的记录 -->
+	<update id="updateBean"	parameterType="com.entity.Book">
+		update	t_book
+		<set>
+			<trim suffixOverrides=",">
+				<if test="bnumber !=null">bnumber=#{bnumber},</if>
+				<if test="bcategory !=null">bcategory=#{bcategory},</if>
+				<if test="bname !=null">bname=#{bname},</if>
+				<if test="author !=null">author=#{author},</if>
+				<if test="press !=null">press=#{press},</if>
+				<if test="price !=null">price=#{price},</if>
+				<if test="pic !=null">pic=#{pic},</if>
+				<if test="intro !=null">intro=#{intro},</if>
+				<if test="courseid !=null">courseid=#{courseid},</if>
+				<if test="cname !=null">cname=#{cname},</if>
+				<if test="tobeordered !=null">tobeordered=#{tobeordered},</if>
+				<if test="ordered !=null">ordered=#{ordered},</if>
+				<if test="kucunsl !=null">kucunsl=#{kucunsl}</if>
+			</trim>
+		</set>
+		where 
+			id=#{id} 
+ 
+	</update>
+	
+
+	
+	
+	<select id="queryData" parameterType="string" resultType="com.entity.Book"   >
+        ${value}
+    </select>
+	
+	
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SelectedlogDao">
+
+	
+
+	<!-- 插入到数据库 -->
+	<insert id="insertBean"		parameterType="com.entity.Selectedlog">
+		insert into t_selectedlog (userid,username,name,courseid,cname,bookid,bnumber,bname,classinfoid,college,
+									major,sessioninfo,classname,snumber,ctime,status,result,stime,feedback,receive,receivetime)
+					values (#{userid},#{username},#{name},#{courseid},#{cname},#{bookid},#{bnumber},#{bname},#{classinfoid},
+					#{college},#{major},#{sessioninfo},#{classname},#{snumber},#{ctime},#{status},
+					#{result},#{stime},#{feedback},#{receive},#{receivetime})
+	</insert>
+	
+	<!-- 根据ID删除数据库的记录 -->
+	<delete id="deleteBean"	parameterType="int">
+		delete from t_selectedlog  where id=#{id}
+	</delete>
+	
+	<!-- 根据ID更新数据库的记录 -->
+	<update id="updateBean"	parameterType="com.entity.Selectedlog">
+		update	t_selectedlog
+		<set>
+			<trim suffixOverrides=",">
+				<if test="userid !=null">userid=#{userid},</if>
+				<if test="username !=null">username=#{username},</if>
+				<if test="name !=null">name=#{name},</if>
+				<if test="courseid !=null">courseid=#{courseid},</if>
+				<if test="cname !=null">cname=#{cname},</if>
+				<if test="bookid !=null">bookid=#{bookid},</if>
+				<if test="bnumber !=null">bnumber=#{bnumber},</if>
+				<if test="bname !=null">bname=#{bname},</if>
+				<if test="classinfoid !=null">classinfoid=#{classinfoid},</if>
+				<if test="college !=null">college=#{college},</if>
+				<if test="major !=null">major=#{major},</if>
+				<if test="sessioninfo !=null">sessioninfo=#{sessioninfo},</if>
+				<if test="classname !=null">classname=#{classname},</if>
+				<if test="snumber !=null">snumber=#{snumber},</if>
+				<if test="ctime !=null">ctime=#{ctime},</if>
+				<if test="status !=null">status=#{status},</if>
+				<if test="result !=null">result=#{result},</if>
+				<if test="stime !=null">stime=#{stime},</if>
+				<if test="receive !=null">receive=#{receive},</if>
+				<if test="receivetime !=null">receivetime=#{receivetime},</if>
+				<if test="feedback !=null">feedback=#{feedback}</if>
+			</trim>
+		</set>
+		where 
+			id=#{id} 
+ 
+	</update>
+	
+
+	
+	
+	<select id="queryData" parameterType="string" resultType="com.entity.Selectedlog"   >
+        ${value}
+    </select>
+	
+	
+</mapper>
+
+
+
+
+
+
+

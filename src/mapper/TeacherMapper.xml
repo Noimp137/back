@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TeacherDao">
+
+	
+
+	<!-- 插入到数据库 -->
+	<insert id="insertBean"		parameterType="com.entity.Teacher">
+		insert into t_teacher (jobno,name,sex,age,phone,ctime)
+					values (#{jobno},#{name},#{sex},#{age},#{phone},#{ctime})
+	</insert>
+	
+	<!-- 根据ID删除数据库的记录 -->
+	<delete id="deleteBean"	parameterType="int">
+		delete from t_teacher  where id=#{id}
+	</delete>
+	
+	<!-- 根据ID更新数据库的记录 -->
+	<update id="updateBean"	parameterType="com.entity.Teacher">
+		update	t_teacher
+		<set>
+			<trim suffixOverrides=",">
+				<if test="jobno !=null">jobno=#{jobno},</if>
+				<if test="name !=null">name=#{name},</if>
+				<if test="sex !=null">sex=#{sex},</if>
+				<if test="age !=null">age=#{age},</if>
+				<if test="phone !=null">phone=#{phone},</if>
+				<if test="ctime !=null">ctime=#{ctime}</if>
+			</trim>
+		</set>
+		where 
+			id=#{id} 
+ 
+	</update>
+	
+
+	
+	
+	<select id="queryData" parameterType="string" resultType="com.entity.Teacher"   >
+        ${value}
+    </select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
